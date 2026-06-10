@@ -58,3 +58,14 @@ After sorting -> ['a', 'compare', 'i', 'to'].
 =================================================
 
 """
+with open("sowpods.txt", "r") as file:
+    sowpods = {line.strip() for line in file}
+
+with open("sonnet_words.txt", "r") as file:
+    sonnet = {line.strip() for line in file}
+
+difference = sorted(sonnet - sowpods)
+
+print("Words in sonnet but not in sowpods:")
+print(difference)
+print("Total:", len(difference))

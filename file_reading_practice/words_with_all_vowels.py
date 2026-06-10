@@ -40,3 +40,15 @@ Explanation:
 =================================================
 
 """
+vowels = set("aeiou")
+count = 0
+
+with open("sowpods.txt", "r") as file:
+    for line in file:
+        word = line.strip().lower()
+
+        if vowels.issubset(set(word)):
+            print(word)
+            count += 1
+
+print("Total words with all vowels:", count)
